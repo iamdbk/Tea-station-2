@@ -18,16 +18,17 @@
 body {
   font-family: "Catamaran", sans-serif;
   line-height: 1.5;
-  overflow: hidden;
 }
 
 /* Hamburger */
+
 .ham {
   position: absolute;
+  z-index: 100;
   left: 3rem;
-  top: 3rem;
-  width: 2.5rem;
-  height: 0.35rem;
+  top: 3.5rem;
+  width: 2.6rem;
+  height: 0.45rem;
   background-color: var(--primaryColor);
   border-radius: 2em;
   animation: ham-animate 1500ms infinite;
@@ -55,15 +56,53 @@ body {
   height: 100%;
   border-radius: 2em;
   background-color: var(--primaryColor);
-  /* bottom: -0.9rem; */
 }
 
 .ham::before {
-  bottom: -0.8rem;
+  bottom: -0.9rem;
 }
 .ham::after {
-  top: -0.8rem;
+  top: -0.9rem;
 }
+
+/* nav-bar */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 4.5em;
+  background-color: var(--mainGrey);
+  z-index: 1;
+  transform: scalex(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: left;
+}
+.scale {
+  transform: scalex(1);
+}
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-menu > a {
+  text-decoration: none;
+  color: var(--primaryColor);
+  font-size: 2rem;
+  margin-top: 2em;
+  font-weight: bold;
+  transition: transform 150ms ease-in-out;
+}
+
+.nav-menu > a:hover {
+  transform: translateX(15px);
+  text-shadow: 20px 32px 25px black;
+}
+/* end of navbar */
 
 /* header */
 
@@ -75,6 +114,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .header h3 {
@@ -109,7 +149,7 @@ body {
   border: 1px solid var(--primaryColor);
   outline-offset: 4px;
   font-weight: bolder;
-  transition: var(--mainTransition);
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
   margin-top: 1.6rem;
   animation: header-button 1200ms forwards ease-in-out;
   transform: scale(1.8);
@@ -140,4 +180,15 @@ body {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.lin-grad {
+  background: rgb(15, 121, 9);
+  background: linear-gradient(
+    to left,
+    var(--primaryColor),
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
+  height: 10px;
 }
