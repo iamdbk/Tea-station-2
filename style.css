@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -477,3 +478,484 @@ button {
     width: 50vw;
   }
 }
+=======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --slantedText: "Grand Hotel", cursive;
+  --primaryColor: #698f3f;
+  --secondaryColor: #fca311;
+  --mainDark: #3a3e3b;
+  --mainWhite: #fff;
+  --mainGrey: #e5e5e5;
+  --mainTransition: all 300ms ease-in-out;
+  --letterSpacing: 0.5rem;
+}
+
+body {
+  font-family: "Catamaran", sans-serif;
+  line-height: 1.5;
+}
+button {
+  font-family: "Catamaran", sans-serif;
+  letter-spacing: var(--letterSpacing);
+  padding: 0.8em 2em;
+  font-size: 1rem;
+  color: var(--mainDark);
+  background-color: var(--primaryColor);
+  outline: 3px solid var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  outline-offset: 4px;
+  font-weight: bolder;
+}
+
+/* Hamburger */
+
+.ham {
+  position: fixed;
+  z-index: 100;
+  left: 3rem;
+  top: 3.5rem;
+  width: 2.6rem;
+  height: 0.45rem;
+  background-color: var(--primaryColor);
+  border-radius: 2em;
+  animation: ham-animate 1500ms infinite;
+}
+
+/* Hamburger animation "ham-animate" */
+@keyframes ham-animate {
+  0% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.ham::after,
+.ham::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2em;
+  background-color: var(--primaryColor);
+}
+
+.ham::before {
+  bottom: -0.9rem;
+}
+.ham::after {
+  top: -0.9rem;
+}
+
+/* nav-bar */
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 4.5em;
+  background-color: var(--mainGrey);
+  z-index: 1;
+  transform: scalex(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: left;
+}
+.scale {
+  transform: scalex(1);
+}
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-menu > a {
+  text-decoration: none;
+  color: var(--primaryColor);
+  font-size: 2rem;
+  margin-top: 2em;
+  font-weight: bold;
+  transition: transform 150ms ease-in-out;
+}
+
+.nav-menu > a:hover {
+  transform: translateX(15px);
+  /* text-shadow: 20px 32px 25px black; */
+}
+/* end of navbar */
+
+/* header */
+
+.header {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("/images/main-bcg.jpeg") center/cover fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header h3 {
+  font-family: var(--slantedText);
+  color: var(--primaryColor);
+  font-size: 2.5rem;
+  letter-spacing: var(--letterSpacing);
+  text-align: center;
+  animation: header-h3 1200ms forwards ease-in-out;
+  position: relative;
+  left: 100vw;
+}
+.header h1 {
+  color: var(--mainWhite);
+  letter-spacing: var(--letterSpacing);
+  font-size: 4.5rem;
+  text-align: center;
+  margin-top: 1.6rem;
+  animation: header-h1 1200ms forwards ease-in-out;
+  position: relative;
+  right: 100vw;
+}
+
+.header > button {
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  margin-top: 1.6rem;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  animation: header-button 1200ms forwards ease-in-out;
+  transform: scale(1.8);
+  opacity: 0;
+}
+
+.header > button:hover {
+  background-color: rgb(105, 143, 63, 0.8);
+  color: var(--mainWhite);
+}
+
+/* header h3 animation */
+@keyframes header-h3 {
+  100% {
+    left: 0;
+  }
+}
+
+/* header h1 animation */
+@keyframes header-h1 {
+  100% {
+    right: 0;
+  }
+}
+/* header button animation */
+@keyframes header-button {
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* End of header */
+
+.lin-grad {
+  background: rgb(15, 121, 9);
+  background: linear-gradient(
+    to left,
+    var(--primaryColor),
+    var(--secondaryColor),
+    var(--primaryColor)
+  );
+  height: 10px;
+}
+
+/* Starting the Tiles */
+
+.tiles {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: var(--mainGrey);
+}
+
+.art {
+  padding: 2em 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: var(--mainTransition);
+  width: 24vw;
+}
+
+.art > span {
+  letter-spacing: 5px;
+  transition: var(--mainTransition);
+}
+.art > i {
+  transition: var(--mainTransition);
+  color: var(--mainDark);
+}
+
+.art:hover {
+  background-color: var(--primaryColor);
+}
+
+.art:hover > span {
+  color: var(--mainWhite);
+}
+
+.art:hover > i {
+  transform: translateY(-8px);
+}
+/* Ending the tiles */
+
+/* Starting the About Section */
+
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 5em 1.5em;
+}
+
+.about-pic-pic {
+  width: 30rem;
+  display: block;
+  border: 0.5rem solid var(--primaryColor);
+  border-radius: 1em;
+}
+
+.about-text {
+  margin-left: 4em;
+}
+
+.about-text > h2.title {
+  font-family: var(--slantedText);
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+  font-size: 2rem;
+}
+
+.about-text > h2.sub-title {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.about-text > p {
+  color: var(--mainDark);
+  margin-bottom: 1em;
+}
+
+.about-text > button {
+  margin-top: 1em;
+}
+
+/* Ending about section */
+
+/* Starting Product section************************************** */
+.products {
+  background-color: var(--mainDark);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 7em 8em;
+}
+
+.product-title {
+  font-family: var(--slantedText);
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+  font-size: 2rem;
+  margin-bottom: 0.1em;
+}
+
+.product-subtitle {
+  color: var(--mainWhite);
+  font-size: 2rem;
+}
+
+.product-item > h2 {
+  color: var(--mainWhite);
+  letter-spacing: var(--letterSpacing);
+  font-size: 1.2rem;
+}
+.product-item > h3 {
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+  margin-top: 0.8em;
+}
+.product-text {
+  flex: 0.5;
+}
+.product-text > p {
+  color: var(--mainWhite);
+  margin-top: 1.5em;
+  margin-bottom: 2.5em;
+}
+.product-item > img {
+  width: 15rem;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
+}
+/* Ending Product section********************************************** */
+
+/* Starting Contact section */
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 7em 8em;
+}
+
+.address-title {
+  color: var(--primaryColor);
+  font-family: var(--slantedText);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.25em;
+}
+.address-title > i {
+  margin-right: 1em;
+}
+.address-sub {
+  padding-bottom: 2.5em;
+}
+.details {
+  margin-left: 10em;
+}
+
+.form .input {
+  width: 50rem;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid var(--mainDark);
+  padding-bottom: 1.5em;
+  outline: none;
+}
+
+.margin-top {
+  margin-top: 3em;
+}
+.button {
+  font-family: "Catamaran", sans-serif;
+  letter-spacing: var(--letterSpacing);
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  color: var(--mainDark);
+  background-color: var(--primaryColor);
+  outline: 3px solid var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  outline-offset: 4px;
+  font-weight: bolder;
+  margin-top: 2em;
+}
+
+.input::placeholder {
+  color: var(--primaryColor);
+  font-weight: bold;
+  letter-spacing: var(--letterSpacing);
+}
+
+/* Ending Contact section */
+
+/* Starting footer */
+
+.footer {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--mainDark);
+}
+.tag {
+  color: var(--mainWhite);
+  letter-spacing: var(--letterSpacing);
+  text-align: center;
+}
+.icons {
+  color: var(--mainWhite);
+  margin-bottom: 0.5em;
+}
+.social + .social {
+  margin-left: 1em;
+}
+.tag > span {
+  color: var(--primaryColor);
+}
+
+/* Ending footer */
+/* MEDIA QUIERIES */
+@media (max-width: 654px) {
+  /* HEADER */
+  .header > h3 {
+    font-size: 2rem;
+  }
+  .header > h1 {
+    font-size: 3rem;
+  }
+  /* HEADER END */
+  /* TILES */
+  .art {
+    width: 100vw;
+  }
+  /* TILES END */
+  /* ABOUT */
+  .about-pic-pic {
+    width: 20rem;
+  }
+  button {
+    font-size: 0.85rem;
+    padding: 0.6em 1em;
+  }
+
+  /* ABOUT END */
+
+  /* PRODUCT */
+  .products {
+    padding: 7em 5em;
+  }
+  .product-item > img {
+    width: 13rem;
+  }
+  .product-text > p {
+    margin-bottom: 2em;
+  }
+  .product-text > button {
+    margin-top: 0;
+    margin-bottom: 3em;
+  }
+  /* PRODUCT END */
+
+  /* CONTACT */
+  .details {
+    margin-left: 5em;
+  }
+  .address-title > i {
+    margin-right: 0.25em;
+  }
+  h2.address-title {
+    font-size: 1.2rem;
+    letter-spacing: 0.25rem;
+  }
+  .form > .input {
+    width: 15rem;
+  }
+  /* CONTACT END */
+}
+
+@media (min-width: 655px) and (max-width: 1200px) {
+  .art {
+    width: 50vw;
+  }
+}
+>>>>>>> 361d60d6e17f42f61b5cfbd120b31abc10688022
