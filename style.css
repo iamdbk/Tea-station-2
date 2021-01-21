@@ -19,6 +19,18 @@ body {
   font-family: "Catamaran", sans-serif;
   line-height: 1.5;
 }
+button {
+  font-family: "Catamaran", sans-serif;
+  letter-spacing: var(--letterSpacing);
+  padding: 0.8em 2em;
+  font-size: 1rem;
+  color: var(--mainDark);
+  background-color: var(--primaryColor);
+  outline: 3px solid var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  outline-offset: 4px;
+  font-weight: bolder;
+}
 
 /* Hamburger */
 
@@ -139,18 +151,9 @@ body {
 }
 
 .header > button {
-  font-family: "Catamaran", sans-serif;
-  letter-spacing: var(--letterSpacing);
-  padding: 0.8em 2em;
-  font-size: 1rem;
-  color: var(--mainDark);
-  background-color: var(--primaryColor);
-  outline: 3px solid var(--primaryColor);
-  border: 1px solid var(--primaryColor);
-  outline-offset: 4px;
-  font-weight: bolder;
   transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
   margin-top: 1.6rem;
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
   animation: header-button 1200ms forwards ease-in-out;
   transform: scale(1.8);
   opacity: 0;
@@ -212,8 +215,19 @@ body {
   justify-content: center;
   text-align: center;
   transition: var(--mainTransition);
+  width: 24vw;
+}
+@media (max-width: 654px) {
+  .art {
+    width: 100vw;
+  }
 }
 
+@media (min-width: 655px) and (max-width: 1200px) {
+  .art {
+    width: 50vw;
+  }
+}
 .art > span {
   letter-spacing: 5px;
   transition: var(--mainTransition);
@@ -232,4 +246,94 @@ body {
 
 .art:hover > i {
   transform: translateY(-8px);
+}
+/* Ending the tiles */
+
+/* Starting the About Section */
+
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 5em 1.5em;
+}
+
+.about-pic {
+}
+.about-pic-pic {
+  width: 30rem;
+  display: block;
+  border: 0.5rem solid var(--primaryColor);
+  border-radius: 1em;
+}
+
+.about-text {
+  margin-left: 4em;
+}
+
+.about-text > h2.title {
+  font-family: var(--slantedText);
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+  font-size: 2rem;
+}
+
+.about-text > h2.sub-title {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+.about-text > p {
+  color: var(--mainDark);
+  margin-bottom: 1em;
+}
+
+.about-text > button {
+  margin-top: 1em;
+}
+
+/* Ending about section */
+
+/* Starting Product section */
+.products {
+  background-color: var(--mainDark);
+  display: flex;
+  justify-content: space-between;
+  padding: 7em 8em;
+}
+
+.product-title {
+  font-family: var(--slantedText);
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+  font-size: 2rem;
+  margin-bottom: 0.1em;
+}
+
+.product-subtitle {
+  color: var(--mainWhite);
+  font-size: 2rem;
+}
+
+.product-item > h2 {
+  color: var(--mainWhite);
+  letter-spacing: var(--letterSpacing);
+  font-size: 1.2rem;
+}
+.product-item > h3 {
+  color: var(--primaryColor);
+  letter-spacing: var(--letterSpacing);
+  margin-top: 0.8em;
+}
+.product-text {
+  flex: 0.5;
+}
+.product-text > p {
+  color: var(--mainWhite);
+  margin-top: 1.5em;
+  margin-bottom: 2.5em;
+}
+.product-item > img {
+  width: 15rem;
+  margin-bottom: 1em;
+  border-radius: 0.5em;
 }
