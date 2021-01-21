@@ -217,23 +217,14 @@ button {
   transition: var(--mainTransition);
   width: 24vw;
 }
-@media (max-width: 654px) {
-  .art {
-    width: 100vw;
-  }
-}
 
-@media (min-width: 655px) and (max-width: 1200px) {
-  .art {
-    width: 50vw;
-  }
-}
 .art > span {
   letter-spacing: 5px;
   transition: var(--mainTransition);
 }
 .art > i {
   transition: var(--mainTransition);
+  color: var(--mainDark);
 }
 
 .art:hover {
@@ -257,8 +248,6 @@ button {
   padding: 5em 1.5em;
 }
 
-.about-pic {
-}
 .about-pic-pic {
   width: 30rem;
   display: block;
@@ -293,11 +282,12 @@ button {
 
 /* Ending about section */
 
-/* Starting Product section */
+/* Starting Product section************************************** */
 .products {
   background-color: var(--mainDark);
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 7em 8em;
 }
 
@@ -337,3 +327,89 @@ button {
   margin-bottom: 1em;
   border-radius: 0.5em;
 }
+/* Ending Product section********************************************** */
+
+/* Starting Contact section */
+.contact {
+  display: flex;
+  justify-content: center;
+  padding: 7em 8em;
+}
+
+.address-title {
+  color: var(--primaryColor);
+  font-family: var(--slantedText);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 0.25em;
+}
+.address-title > i {
+  margin-right: 1em;
+}
+.address-sub {
+  padding-bottom: 2.5em;
+}
+.details {
+  margin-left: 10em;
+}
+
+.form .input {
+  width: 50rem;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 2px solid var(--mainDark);
+  padding-bottom: 1.5em;
+  outline: none;
+}
+
+.margin-top {
+  margin-top: 3em;
+}
+.button {
+  font-family: "Catamaran", sans-serif;
+  letter-spacing: var(--letterSpacing);
+  padding: 0.6em 1em;
+  font-size: 1rem;
+  color: var(--mainDark);
+  background-color: var(--primaryColor);
+  outline: 3px solid var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  outline-offset: 4px;
+  font-weight: bolder;
+  margin-top: 2em;
+}
+
+.input::placeholder {
+  color: var(--primaryColor);
+  font-weight: bold;
+  letter-spacing: var(--letterSpacing);
+}
+
+/* Ending Contact section */
+
+/* Starting footer */
+
+.footer {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--mainDark);
+}
+.tag {
+  color: var(--mainWhite);
+  letter-spacing: var(--letterSpacing);
+  text-align: center;
+}
+.icons {
+  color: var(--mainWhite);
+  margin-bottom: 0.5em;
+}
+.social + .social {
+  margin-left: 1em;
+}
+.tag > span {
+  color: var(--primaryColor);
+}
+
+/* Ending footer */
